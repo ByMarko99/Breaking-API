@@ -1,0 +1,312 @@
+/* /Pages/Breaking.razor.rz.scp.css */
+body[b-zbjux2zp1o] {
+    background-image: linear-gradient(rgba(255,255,255,0.99), rgba(255,255,255,0.7)), url('https://wallpaperaccess.com/full/2866361.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.div1[b-zbjux2zp1o], h3[b-zbjux2zp1o] {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom:30px;
+    font-weight:bold;
+
+}
+
+.title[b-zbjux2zp1o] {
+    color: #014213;
+    text-shadow: 1px;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 22px 30px rgba(0,0,0,0.9);
+}
+
+
+
+.accordion-button[b-zbjux2zp1o] {
+    width: 50%;
+    background-color: mediumseagreen;
+    color: darkslategrey;
+    font-weight: bold;
+    margin-right: 5px;
+    border: solid black 1px;
+}
+    .accordion-button:focus[b-zbjux2zp1o] {
+        -webkit-box-shadow: 0px 0px 8px 8px rgba(3,54,13,0.65);
+        -moz-box-shadow: 0px 0px 8px 8px rgba(3,54,13,0.65);
+        box-shadow: 0px 0px 8px 8px rgba(3,54,13,0.65);
+
+    }
+
+.button[b-zbjux2zp1o] {
+    background: url(https://img.icons8.com/color/480/breaking-bad.png) no-repeat scroll right center #042e16;
+    background-origin: content-box;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: 100% 100%;
+    position: relative;
+    width: 5%;
+    z-index: 5;
+}
+
+    .button:hover[b-zbjux2zp1o] {
+        z-index:5;
+        box-shadow: 0px 0px 8px 8px rgba(3,54,13,0.65);
+        transform: scale(1.5);
+    }
+
+
+/* Pertsonai div */
+.div2[b-zbjux2zp1o] {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    block-size: fit-content;
+    border: solid black 4px;
+    background-color: #F2F2F2;
+    background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.7)), url('https://wallpaperaccess.com/full/2866361.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: #014213;
+}
+
+    .div2:hover[b-zbjux2zp1o] {
+        background-image: linear-gradient(rgba(255,255,255,0.99), rgba(255,255,255,0.61)), url('https://wallpaperaccess.com/full/2866361.jpg');
+    }
+
+/* Quote div */
+.div3[b-zbjux2zp1o] {
+    font-size: 30px;
+    padding-top: 3%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card[b-zbjux2zp1o] {
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner[b-zbjux2zp1o] {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner[b-zbjux2zp1o] {
+  transform: rotateY(180deg);
+
+}
+
+/* Position the front and back side */
+.flip-card-front[b-zbjux2zp1o], .flip-card-back[b-zbjux2zp1o] {
+
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front[b-zbjux2zp1o] {
+
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back[b-zbjux2zp1o] {
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    bottom: 100px;
+    scroll-margin-bottom: 100px;
+    scroll-margin-block-end: 100px;
+    block-size: fit-content;
+    position: absolute;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+/* Back of card div */
+.bb[b-zbjux2zp1o] {
+    display: flex;
+    text-align: center;   
+}
+
+
+
+
+
+
+
+
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-wj7nrol0gt] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(255,255,255,0.99), rgba(255,255,255,0.7)), url('https://wallpaperaccess.com/full/2866361.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main[b-wj7nrol0gt] {
+    flex: 1;
+}
+
+.sidebar[b-wj7nrol0gt] {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,82,8,1) 80%);
+}
+
+.top-row[b-wj7nrol0gt] {
+    background: linear-gradient(16deg, rgba(2,0,36,1) 0%, rgba(0,49,5,1) 0%, rgba(0,49,5,1) 25%, rgba(0,49,5,1) 58%);
+    border-bottom: 3px solid black;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-wj7nrol0gt]  a, .top-row[b-wj7nrol0gt]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-wj7nrol0gt]  a:hover, .top-row[b-wj7nrol0gt]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-wj7nrol0gt]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-wj7nrol0gt] {
+        display: none;
+    }
+
+    .top-row.auth[b-wj7nrol0gt] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-wj7nrol0gt]  a, .top-row[b-wj7nrol0gt]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-wj7nrol0gt] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-wj7nrol0gt] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-wj7nrol0gt] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-wj7nrol0gt]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-wj7nrol0gt], article[b-wj7nrol0gt] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-edwwqnhdce] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-edwwqnhdce] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-edwwqnhdce] {
+    font-size: 1.1rem;
+}
+
+.oi[b-edwwqnhdce] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-edwwqnhdce] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-edwwqnhdce] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-edwwqnhdce] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-edwwqnhdce]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-edwwqnhdce]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-edwwqnhdce]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-edwwqnhdce] {
+        display: none;
+    }
+
+    .collapse[b-edwwqnhdce] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}

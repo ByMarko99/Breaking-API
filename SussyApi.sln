@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SussyApi", "SussyApi.csproj", "{DFAE5094-CCC0-4FE2-A402-F9B6FA53468A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFAE5094-CCC0-4FE2-A402-F9B6FA53468A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAE5094-CCC0-4FE2-A402-F9B6FA53468A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAE5094-CCC0-4FE2-A402-F9B6FA53468A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAE5094-CCC0-4FE2-A402-F9B6FA53468A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7F45945-B4A1-4633-BDEA-96F123E09BC3}
+	EndGlobalSection
+EndGlobal

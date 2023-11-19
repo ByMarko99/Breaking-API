@@ -1,0 +1,32 @@
+﻿@* Breaking.razor fitxategitik klase hau hartuko da API bariablei formatua emateko *@
+<h5 class="card-title"> <b>@name</b</h5>
+<p class="card-text"><b><i>@nickname</i></b></p>
+<p class="card-text">@occupation</p>
+<p class="card-text">@status</p>
+<p class="card-text">@birthday</p>
+<p class="card-text">@portrayed</p>
+
+
+@* Getters and setters*@
+@code {
+     [Parameter]
+     public string name { get; set; }
+
+     [Parameter]
+     public string nickname { get; set; }
+
+     [Parameter]
+     public string[] occupation { get; set; }
+
+     [Parameter]
+     public string status { get; set; }
+
+     [Parameter]
+     public string portrayed { get; set; }
+
+     [Parameter]
+     public string birthday { get; set; }
+
+
+  
+}

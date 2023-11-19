@@ -1,0 +1,196 @@
+﻿@page "/"
+@*
+    Kode hau, orri printzipalarena da, API bat erabiltzen, pertsonaiak erakusten ditu bilatzerakoan
+    formatua ematen zaio eta funtzionalitate batzuk aplikatu
+*@
+@inject HttpClient Client
+<PageTitle>Index</PageTitle>
+
+<body>
+    <h3 class="title">Breaking bad</h3>
+    <div class="div1">
+        <input type="text" class="accordion-button" placeholder="Personaje" @bind="nombre" />
+        <input type="button" @onclick="GetCharacter" class="button" /> @* onclick egiterakoan pertsonaiak berreskuratzen dituen metodoa exekutatzen da *@
+    </div>
+
+
+
+    @if (quote != null) @* Berreskuratutako quote null ez bada erakusten du web hasieran, beharrezkoa da jartzea web-a funtzionatzeko *@
+    {
+        <div style="display:@display2" class="div3">
+            <i>@quote[0].quote</i>
+            <br>
+            <h4> - @quote[0].author -</h4> @* Quote autorea *@
+        </div>
+    }
+
+    @* 
+        display bariable toggle-atzen da visible eta hidden ipintzen da. Visible ipiniko da bakarrik pertsonai bat bilatzerakoan
+        horrela ez da agertuko div karratua pertsonairik ez bada bilatzen.
+    *@
+    <div class="div2" style="display:@display">  
+
+
+        @if (character != null) @* Berreskuratutako pertsonaia null ez bada erakusten du web hasieran, beharrezkoa da jartzea web-a funtzionatzeko *@
+        {
+
+            <div class="card-body">
+                <br>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                       <div class="flip-card-front">
+  
+                <Character name=@character[0].name />
+                <Character nickname=@character[0].nickname />
+
+                @for (int i = 0; character[0].occupation.Length > i; i++)
+                {
+
+                    string a = character[0].occupation[i]; @* For honetan pertsonaiaren lanbide/okupazio guztiak berrezkuratzen dira, a string-an gordetetzen dira
+                     eta printeatzen dira, a string erabili ez gero ez zuen okupazio guztiak inprimatzen
+                    *@
+                    <span>@a</span>
+                    <br />
+                }
+                <br />
+                @if (character[0].name == "Saul Goodman") @* Pertsonaiaren izena hau bada, nik aukeratutako argazki eta soinu bat jarriko dio *@
+                {
+                    <div style="visibility:hidden;  display:none;">
+                        <audio autoplay controls><source src="/css/saul.mp3" /></audio>
+                    </div>
+                    <img src="https://media.tenor.com/pMhSj9NfCXsAAAAd/saul-goodman-better-call-saul.gif" width="250px" height="250px" />
+
+
+                }
+                else if (character[0].name == "Walter White")
+                {
+
+                    <img src="https://c.tenor.com/0VT7jilszwEAAAAC/mr-white-heisenberg.gif" width="250px" height="250px" />
+
+
+                }
+                else if (character[0].name == "Skyler White")
+                {
+                    <div style="visibility:hidden; display:none;">
+                        <audio autoplay controls><source src="/css/skyler.mp3" /></audio>
+                    </div>
+                    <img src="@character[0].img" width="250px" height="250px" />
+
+                }
+                else if (character[0].name == "Henry Schrader")
+                {
+                <div style="visibility:hidden; display:none;">
+                    <audio autoplay controls><source src="/css/hank.mp3" /></audio>
+                </div>
+                    <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/069/848/829.jpg" width="250px" height="250px" />
+
+                }
+                else if (character[0].name == "Gustavo Fring")
+                {
+                    <div style="visibility:hidden; display:none;">
+                        <audio autoplay controls><source src="/css/gussy.mp3" /></audio>
+                    </div>
+                    <img src="https://pbs.twimg.com/media/FUN4LphX0AIbLLu.jpg" width="250px" height="250px" />
+
+                }
+                else if (character[0].name == "Hector Salamanca")
+                {
+                    <div style="visibility:hidden; display:none;">
+                        <audio autoplay controls><source src="/css/hector.mp3" /></audio>
+                    </div>
+                    <img src="@character[0].img" width="250px" height="250px" />
+
+                }
+                else
+                {
+                    <img src="@character[0].img" width="250px" height="250px" />@* API default iamge *@
+                }
+                    </div>
+
+
+                <div class="flip-card-back">@* Hover egiterakoan informazio hau agertuko da *@
+                    <div class="bb">
+                                <b>Status: &nbsp </b> <Character status=@character[0].status /> @* Beste klasetik hartzen du formatua Character.cs *@
+                    </div>
+                    <div class="bb">
+                         <b>Actor/Actriz: &nbsp </b> <Character portrayed=@character[0].portrayed />
+                    </div>
+                    <p></p> 
+                    <div class="bb">
+                         <b>Status: &nbsp </b> <Character portrayed=@character[0].birthday />
+                    </div>
+                </div>
+            </div>
+         </div>
+
+      </div>
+        }
+        else if (character == null) @* Pertsonairik ez badu aurkitzen hau jarriko du == null beharrezkoa da espezifikatzea bestela ez du funtzionatuko *@
+        {
+            <div class="card-body">
+                <h3>El personaje introducido no existe, introduce bien el nombre</h3>
+            </div>
+        }
+
+    </div>
+
+
+</body>
+
+
+@code {
+    string nombre = "";
+    Class1[] character; // Api pertsonai informazioa jasoko du
+    Class2[] quote;  // Api quote informazioa jasoko du
+    string display = "none"; // Toggle visibility 
+    bool aratzfag = false; // Idk
+    string display2 = "flex"; // display antzekoa baina quote-entzako
+
+
+    // Web kargatzerakoan exekutatuko da metodoa
+    protected override async Task OnInitializedAsync()
+    {
+        await GetRandomQuote();
+    }
+
+    // Endpoint-etik hartzeko bilatutako pertsonaia
+    async Task GetCharacter()
+    {
+        // ** FROGAK ** //
+
+        // var task = await Client.GetFromJsonAsync<Class1>(Endpoints.GetCharacter(nombre));
+        // var jsonString = await task.Content.ReadAsStringAsync();
+        // Class1[] result = System.Text.Json.JsonSerializer.Deserialize<Class1[]>(task);
+
+        // Rootobject characterData = await Client.GetFromJsonAsync<Rootobject>(Endpoints.GetCharacter(nombre));
+        // characters = System.Text.Json.JsonSerializer.Deserialize<Class1>(Endpoints.GetCharacter(nombre));
+        // var a = System.Text.Json.JsonSerializer.Deserialize<List<Class1[]>>(Endpoints.GetCharacter(nombre));
+
+        character = await Client.GetFromJsonAsync<Class1[]>(Endpoints.GetCharacter(nombre));
+
+
+        if (character.Length == 0) // Pertsonairik ez badu agertzen null asignatu if kondizioan sartzeko eta mezu bat erakusteko
+        {
+            character = null;
+
+        }
+        display = "flex";
+        display2 = "none";
+
+        //aa = System.Text.Json.JsonSerializer.Deserialize<Class1>(characters);
+        // var personaje = Endpoints.GetCharacter(nombre);
+        // characters = await Client.GetFromJsonAsync<Rootobject>(Endpoints.GetCharacter(characters1.Property1[0].name));
+
+    }
+
+
+    // Endpoint-etik hartzeko random quote
+    async Task GetRandomQuote()
+    {
+        quote = await Client.GetFromJsonAsync<Class2[]>(Endpoints.GetRandomQuote());
+    }
+
+
+
+}

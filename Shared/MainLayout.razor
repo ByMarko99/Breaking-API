@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a style="color:white" href="." target="_parent">Random Quote</a> @* Refresh page href="." target="_parent" *@
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
