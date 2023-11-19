@@ -1,4 +1,5 @@
-# Breaking-API
+# Breaking-API BLAZOR
+
 ## *NOTE: This project will no longer work due to the "https://www.breakingbadapi.com/documentation" website has stopped working, and thus the API it's no longer available*
 
 “The Breaking Bad API is a collection of information on the Vince Gilligan series Breaking Bad, as well as his incredible spin-off Better Call Saul. This site is designed to make it easy on the developer to see what HTTP requests are possible, and what information is available.”
